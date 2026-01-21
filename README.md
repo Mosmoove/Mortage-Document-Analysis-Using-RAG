@@ -22,3 +22,89 @@ Manual review is:
 
 Goal:
 Reduce processing time and improve accuracy by enabling intelligent document querying through a RAG-based system.
+
+--- 
+
+## Solution Approach
+
+This project implements a Retrieval-Augmented Generation (RAG) pipeline that:
+
+- Ingests mortgage documents
+- Converts text into vector embeddings
+- Stores embeddings in a vector index
+- Retrieves the most relevant document chunks based on user queries
+- Augments the retrieved context with a Large Language Model to generate accurate responses
+
+By separating retrieval from generation, the system ensures responses are grounded in the source documents rather than hallucinated.
+
+---
+
+## Tech Stack: 
+
+Python – Core language for pipeline development
+
+LlamaIndex – Document ingestion, indexing, and retrieval
+
+Vector Embeddings – Semantic search over mortgage documents
+
+Google Gemini API – Language model for response generation
+
+RAG Architecture – Combines retrieval with LLM reasoning
+
+--- 
+## Architecture Overview
+
+Mortgage Documents
+        ↓
+Text Chunking & Preprocessing
+        ↓
+Vector Embedding Generation
+        ↓
+Vector Index (LlamaIndex)
+        ↓
+Relevant Context Retrieval
+        ↓
+LLM (Gemini API)
+        ↓
+Final Answer
+
+--- 
+
+## Key Features
+
+- 🔍 Semantic search across mortgage documents
+- ⚡ Faster information retrieval compared to manual review
+- 📚 Context-aware responses grounded in source data
+- 🧠 Reduced hallucinations via retrieval augmentation
+- 🏗 Modular pipeline design for extensibility
+
+--- 
+
+## What I Learned
+
+- How RAG pipelines work in real-world document processing
+
+- Practical use of LlamaIndex for indexing and retrieval
+
+- Embedding-based semantic search fundamentals
+
+- Integrating external LLM APIs (Gemini) into production-style workflows
+
+- Designing scalable data pipelines for unstructured text
+
+--- 
+
+## Getting Started
+
+- Clone the repository
+
+- Install dependencies
+
+- Add your GEMINI_API_KEY as an environment variable
+
+- Run the notebook/script to index documents and query the system
+
+## Disclaimer
+
+This project is for educational and experimental purposes and does not replace professional legal or financial review.
+
